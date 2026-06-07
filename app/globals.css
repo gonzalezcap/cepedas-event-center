@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BRAND TOKENS — single source for theming.
+   Swap these values when the client branding kit arrives.
+   ============================================================ */
+:root {
+  --color-primary: #1f2a24;   /* deep forest (placeholder) */
+  --color-secondary: #8a7b66; /* warm taupe (placeholder) */
+  --color-accent: #c2a15a;    /* gold (placeholder) */
+  --color-ink: #1a1a1a;
+  --color-paper: #faf8f5;
+
+  --font-heading: ui-serif, Georgia, "Times New Roman", serif; /* placeholder */
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* placeholder */
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4, .font-heading { font-family: var(--font-heading); }
+
+/* Subtle scroll reveal (progressive enhancement) */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Labeled gray placeholder block for photos pending the shoot */
+.photo-ph {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  background:
+    repeating-linear-gradient(45deg, #e6e3dd 0 12px, #ddd9d1 12px 24px);
+  color: #6b6459;
+  font-size: .8rem; letter-spacing: .02em;
+  padding: 1rem;
+}
+.photo-ph span {
+  background: rgba(255,255,255,.78);
+  padding: .4rem .7rem; border-radius: 4px;
+  font-weight: 600; max-width: 90%;
+}
